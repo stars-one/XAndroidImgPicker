@@ -11,6 +11,7 @@ import com.esafirm.imagepicker.features.common.BaseConfig
 import com.esafirm.imagepicker.helper.ConfigUtils.checkConfig
 import com.esafirm.imagepicker.helper.LocaleManager
 import com.esafirm.imagepicker.model.Image
+import site.starsone.xandroidutil.util.startActivityForResult
 
 /* --------------------------------------------------- */
 /* > Ext */
@@ -28,6 +29,30 @@ class ImagePickerLauncher(
 }
 
 typealias ImagePickerCallback = (List<Image>) -> Unit
+
+/**
+ * 新增的选择图片(无需注意生命周期)
+ */
+fun ComponentActivity.startPickerImg(config: BaseConfig = ImagePickerConfig(),  callback: ImagePickerCallback) {
+    val finalConfig = if (config is ImagePickerConfig) checkConfig(config) else config
+    startActivityForResult(createImagePickerIntent(this,finalConfig)){
+        val images = ImagePicker.getImages(it.data) ?: emptyList()
+        callback.invoke(images)
+    }
+}
+
+/**
+ * 新增的选择图片(无需注意生命周期)
+ */
+fun Fragment.startPickerImg(config: BaseConfig = ImagePickerConfig(),  callback: ImagePickerCallback) {
+    val finalConfig = if (config is ImagePickerConfig) checkConfig(config) else config
+    val activity = requireActivity()
+    activity.startActivityForResult(createImagePickerIntent(activity,finalConfig)){
+        val images = ImagePicker.getImages(it.data) ?: emptyList()
+        callback.invoke(images)
+    }
+}
+
 
 fun Fragment.registerImagePicker(
     context: () -> Context = { requireContext() },

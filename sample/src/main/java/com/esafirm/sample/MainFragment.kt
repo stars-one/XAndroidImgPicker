@@ -23,6 +23,7 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
         binding = FragmentMainBinding.bind(view)
 
+
         binding.buttonPickFragment.setOnClickListener {
             imagePickerLauncher.launch(
                 ImagePickerConfig {

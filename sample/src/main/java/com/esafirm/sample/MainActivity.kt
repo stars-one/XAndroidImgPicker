@@ -10,6 +10,7 @@ import com.esafirm.imagepicker.features.*
 import com.esafirm.imagepicker.features.cameraonly.CameraOnlyConfig
 import com.esafirm.imagepicker.model.Image
 import com.esafirm.sample.databinding.ActivityMainBinding
+import site.starsone.xandroidutil.util.startActivityForResult
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +34,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupButtons() = binding.run {
+        buttonPickImageNew.setOnClickListener {
+            startPickerImg {
+                images.clear()
+                images.addAll(it)
+                printImages(images)
+            }
+        }
+
         buttonPickImage.setOnClickListener { start() }
         buttonIntent.setOnClickListener { startWithIntent() }
         buttonCamera.setOnClickListener { captureImage() }
