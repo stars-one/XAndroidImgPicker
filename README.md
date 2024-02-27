@@ -8,8 +8,8 @@
 
 > 起因是源库已经一年年多不维护了,且3.1.0版本版本进行了gradle和kotlin版本更新,导致我的旧项目依赖后无法成功使用,但3.0.0版本可以,所以就是基于3.0.0版本进行了后续改造和适配
 
-<a href="https://jitpack.io/#esafirm/android-image-picker">
-<img src="https://jitpack.io/v/esafirm/android-image-picker.svg" alt="jitpack - android image picker" />
+<a href="https://jitpack.io/#stars-one/XAndroidImgPicker">
+<img src="https://jitpack.io/stars-one/XAndroidImgPicker.svg" alt="" />
 </a>
 
 # 效果动图
@@ -33,7 +33,7 @@ allprojects {
 
 ```groovy
 dependencies {
-  implementation 'com.github.esafirm:android-image-picker:x.y.z'
+  implementation 'com.github.esafirm:android-image-picker:1.0'
 }
 ```
 
