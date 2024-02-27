@@ -8,7 +8,7 @@
     <string name="ef_title_folder">文件夹</string>
     <string name="ef_title_select_image">选择照片</string>
 
-    <string name="ef_selected">已选择 %d</string>
+    <string name="ef_selected">已选择 %d 张</string>
     <string name="ef_selected_with_limit">已选择 %1$d/%2$d</string>
 
     <string name="ef_error_create_image_file">建立照片文件失败</string>
