@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.os.Environment
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.esafirm.imagepicker.features.*
 import com.esafirm.imagepicker.features.cameraonly.CameraOnlyConfig
@@ -132,7 +133,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun printImages(images: List<Image>?) {
         if (images == null) return
-        binding.textView.text = images.joinToString("\n")
+        binding.textView.text = images.joinToString("\n") { it.toString() + "uri = ${it.uri.toString()}" }
         binding.textView.setOnClickListener {
             ImageViewerActivity.start(this@MainActivity, images)
         }
