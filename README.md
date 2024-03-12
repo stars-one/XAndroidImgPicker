@@ -33,7 +33,7 @@ allprojects {
 
 ```groovy
 dependencies {
-  implementation 'com.github.esafirm:android-image-picker:1.0'
+   implementation 'com.github.stars-one:XAndroidImgPicker:1.0'
 }
 ```
 
